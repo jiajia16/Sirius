@@ -1,0 +1,31 @@
+.side-menu {
+  margin: 30px;
+  width: 200px;
+  height: 70vh;
+  background-color: #2e3e90;
+  border-radius: 15px; /* Rounded edges */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 0px 20px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for better visual effect */
+}
+
+.menu-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: white;
+  color: #2e3e90;
+  border-top-left-radius: 15px; /* Rounded top-left corner */
+  border-bottom-left-radius: 15px; /* Rounded bottom-left corner */
+}
+
+.icon {
+  margin-right: 10px;
+}
