@@ -28,7 +28,7 @@ function App() {
             <SideMenu></SideMenu>
           </Grid>
           <Grid item xs={10} sx={{ height: "100%" }}>
-            <Item>Bottom Right Item</Item>
+            <AssetDashboard></AssetDashboard>
           </Grid>
         </Grid>
       </Grid>
