@@ -55,3 +55,27 @@ h3 {
 .title-value .online {
   color: #33cd32;
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.box {
+  width: 100px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
