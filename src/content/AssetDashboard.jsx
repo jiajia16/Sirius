@@ -1,6 +1,5 @@
 import "./AssetDashboard.css";
 import { useState } from "react";
-import CircularProgress from "../components/CircularProgress/CircularProgress";
 import AssetGrid from "../components/AssetGrid/AssetGrid";
 
 export default function AssetDashboard() {
