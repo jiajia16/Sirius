@@ -15,18 +15,21 @@ import AlarmsCount from '../AlarmsCountContainer/AlarmsCountContainer';
 
 
 
-const Item = styled(Paper)(({ theme }) => ({
+
+const Item = styled(Paper)(({ theme, height }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
   color: theme.palette.text.secondary,
+  height: height,
 }));
 
-const Item1 = styled(Grid)(({ theme }) => ({
+const Item1 = styled(Grid)(({ theme, height }) => ({
   backgroundColor: 'rgba(135, 206, 235, 0.5)', // Background color for the Grid item
   padding: theme.spacing(2), // Padding for the Grid item content
   borderRadius: theme.spacing(1), // Optional: Rounded corners for the Grid item
+  height: height,
 }));
 
 
@@ -40,16 +43,16 @@ export default function AssetGrid() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <Item>
+        <Grid item xs={4}>
+          <Item height="250px">
             <Box component="div" className="alarm-box">
               <Typography component="div" className="alarm-title">
                 Active Alarms
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', mt: 2, ml: 10 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', mt: 0, ml: 7 }}>
               <CircularProgress percentage={percentage} />
-              <Box sx={{ display: 'flex', flexDirection: 'column', ml: 12 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7 }}>
                 <h3>Total</h3>
                 <h1>{totalAlarm}</h1>
                 <h3 className="online">Online</h3>
@@ -70,7 +73,7 @@ export default function AssetGrid() {
           </Item>
         </Grid>
 
-        <Grid item xs={7}>
+        <Grid item xs={8}>
           <Item1>
             <Box component="div" className="alarm-box">
               <Typography component="div" className="alarm-title">
@@ -93,7 +96,7 @@ export default function AssetGrid() {
 
           </Item>
         </Grid>
-        <Grid item xs={11}>
+        <Grid item xs={12}>
           <Item>
             <Box component="div" className="alarm-box">
               <Typography component="div" className="alarm-title">
