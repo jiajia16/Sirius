@@ -10,15 +10,15 @@ const CircleContainer = styled(Grid)({
 });
 
 const Circle = styled(Box)(({ color }) => ({
-    width: 100,
-    height: 100,
+    width: 70,
+    height: 70,
     borderRadius: '50%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: color,
     fontSize: 24,
-    marginBottom: 10, // Adjust the margin to create space between circle and text
+    marginBottom: 5, // Adjust the margin to create space between circle and text
 }));
 
 const TextContainer = styled(Box)({

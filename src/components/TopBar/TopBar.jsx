@@ -11,7 +11,7 @@ import { Typography, Box, AppBar, Toolbar, IconButton } from "@mui/material";
 
 export default function TopBar() {
   return (
-    <Box sx={{ width: "100%", mt: 1 }}>
+    <Box sx={{ width: "100%", mt: 2 }}>
       <AppBar
         position="static"
         sx={{ boxShadow: 0, backgroundColor: "transparent" }}
