@@ -12,6 +12,7 @@ import AlarmSystemTrend from '../AlarmCountSystem/AlarmSystemCount';
 import AlarmsCount from '../AlarmsCountContainer/AlarmsCountContainer';
 import AlarmTable from '../AlarmData/AlarmDataTable';
 
+
 const Item = styled(Paper)(({ theme, height }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -45,7 +46,7 @@ export default function AssetGrid() {
   const [percentage, setPercentage] = useState(88);
 
   return (
-    <Box sx={{ flexGrow: 1}}>
+    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <Item height="180px">
