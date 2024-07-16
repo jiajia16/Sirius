@@ -31,87 +31,45 @@ export default function SideMenu() {
       }}
     >
       <Box className="menu-item">
-        <Home sx={{ fontSize: 30 }} />
+        <Home className="icon" />
         {matches && <Typography>Home</Typography>}
       </Box>
       <Box className="menu-item">
-        <ManageAccounts sx={{ fontSize: 30 }} />
+        <ManageAccounts className="icon" />
         {matches && <Typography>Admin</Typography>}
       </Box>
       <Box className="menu-item">
-        <NotificationsActive sx={{ fontSize: 30 }} />
+        <NotificationsActive className="icon" />
         {matches && <Typography>Alarm</Typography>}
       </Box>
       <Box className="menu-item">
-        <BusinessCenter sx={{ fontSize: 30 }} />
+        <BusinessCenter className="icon" />
         {matches && <Typography>Asset</Typography>}
       </Box>
       <Box className="menu-item">
-        <Handyman sx={{ fontSize: 30 }} />
+        <Handyman className="icon" />
         {matches && <Typography>Maintenance</Typography>}
       </Box>
       <Box className="menu-item">
-        <Event sx={{ fontSize: 30 }} />
+        <Event className="icon" />
         {matches && <Typography>Event</Typography>}
       </Box>
       <Box className="menu-item">
-        <Timeline sx={{ fontSize: 30 }} />
+        <Timeline className="icon" />
         {matches && <Typography>Trend</Typography>}
       </Box>
       <Box className="menu-item">
-        <Assignment sx={{ fontSize: 30 }} />
+        <Assignment className="icon" />
         {matches && <Typography>Work Order</Typography>}
       </Box>
       <Box className="menu-item">
-        <Inventory sx={{ fontSize: 30 }} />
+        <Inventory className="icon" />
         {matches && <Typography>Store</Typography>}
       </Box>
       <Box className="menu-item">
-        <Settings sx={{ fontSize: 30 }} />
+        <Settings className="icon" />
         {matches && <Typography>Setting</Typography>}
       </Box>
     </Box>
-    // <div className="side-menu">
-    //   <div className="menu-item">
-    //     <FaHome className="icon" />
-    //     <span>Home</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <FaUserAlt className="icon" />
-    //     <span>Admin</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsMegaphoneFill className="icon" />
-    //     <span>Alarm</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsBriefcaseFill className="icon" />
-    //     <span>Asset</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsWrench className="icon" />
-    //     <span>Maintenance</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsCalendar2EventFill className="icon" />
-    //     <span>Event</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsBarChartLineFill className="icon" />
-    //     <span>Trend</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsClipboard2Fill className="icon" />
-    //     <span>Work Order</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsBox2Fill className="icon" />
-    //     <span>Store</span>
-    //   </div>
-    //   <div className="menu-item">
-    //     <BsGearFill className="icon" />
-    //     <span>Setting</span>
-    //   </div>
-    // </div>
   );
 }

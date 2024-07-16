@@ -45,7 +45,7 @@ export default function AssetGrid() {
   const [percentage, setPercentage] = useState(88);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1}}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <Item height="180px">
