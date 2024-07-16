@@ -12,7 +12,6 @@ import AlarmSystemTrend from "../AlarmCountSystem/AlarmSystemCount";
 import AlarmsCount from "../AlarmsCountContainer/AlarmsCountContainer";
 import AlarmTable from "../AlarmData/AlarmDataTable";
 
-
 const Item = styled(Paper)(({ theme, height }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
