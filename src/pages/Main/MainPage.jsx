@@ -13,7 +13,7 @@ function Main() {
         spacing={2}
         sx={{ height: "100%", border: "2px red solid" }}
       >
-        {/* Top item */}
+        {/* Top items */}
         <Grid
           item
           xs={12}
