@@ -20,6 +20,11 @@
   gap: 5px;
 }
 
+.menu-item .icon {
+  margin-right: 8px;
+  font-size: 30px;
+}
+
 .menu-item:hover {
   background-color: white;
   color: #2e3e90;
