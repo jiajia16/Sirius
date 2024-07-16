@@ -6,5 +6,3 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/Sirius/' : '/',
 })
-
-vite.config.js
