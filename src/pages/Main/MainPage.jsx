@@ -20,7 +20,7 @@ function Main() {
             <SideMenu></SideMenu>
           </Grid>
           <Grid item xs={10} sx={{ height: "100%", border: "1px red solid" }}>
-            <AssetDashboard></AssetDashboard>
+            <MaintenanceDashboard></MaintenanceDashboard>
           </Grid>
         </Grid>
       </Grid>
