@@ -9,15 +9,21 @@ import MaintenanceDashboard from "../src/content/Maintenance/Dashboard/Maintenan
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LoginPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "main",
     element: <MainPage />,
     children: [
       {
-        path: "maintenanceDashboard",
-        element: <MaintenanceDashboard />,
-      },
-      {
+        index: true, 
         path: "assetDashboard",
         element: <AssetDashboard />,
+      },
+      {
+        path: "maintenanceDashboard",
+        element: <MaintenanceDashboard />,
       },
     ],
   },
