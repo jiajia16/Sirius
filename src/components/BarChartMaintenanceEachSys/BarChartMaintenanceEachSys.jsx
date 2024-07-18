@@ -32,7 +32,7 @@ const barChartData = [
     { name: "Jul-24", Scheduled: 6, Started: 0, Completed: 0, Closed: 0, Cancelled: 0, OverDue: 0 },
 ];
 
-export default function BarChartMaintenanceOverall() {
+export default function BarChartMaintenanceEachSys() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <BarChart data={barChartData}>
