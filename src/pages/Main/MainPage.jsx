@@ -4,6 +4,7 @@ import { Grid, Box } from "@mui/material";
 import SideMenu from "../../components/SideMenu/SideMenu.jsx";
 import TopBar from "../../components/TopBar/TopBar.jsx";
 import AssetDashboard from "../../content/Asset/Dashboard/AssetDashboard.jsx";
+import MaintenanceDashboard from "../../content/Maintenance/Dashboard/MaintenanceDashboard.jsx";
 
 function Main() {
   return (
@@ -18,7 +19,7 @@ function Main() {
           <Grid item xs={2} sx={{ height: "100%" }}>
             <SideMenu></SideMenu>
           </Grid>
-          <Grid item xs={10} sx={{ height: "100%" }}>
+          <Grid item xs={10} sx={{ height: "100%", border: "1px red solid" }}>
             <AssetDashboard></AssetDashboard>
           </Grid>
         </Grid>
