@@ -5,7 +5,7 @@ import LoginPage from "./pages/Login/LoginPage.jsx";
 import NotFoundPage from "./pages/Error/ErrorPage.jsx";
 import AssetDashboard from "../src/content/Asset/Dashboard/AssetDashboard.jsx";
 import MaintenanceDashboard from "../src/content/Maintenance/Dashboard/MaintenanceDashboard.jsx";
-import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDashboard.jsx"
+import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,11 +14,15 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
     path: "main",
     element: <MainPage />,
     children: [
       {
-        index: true, 
+        index: true,
         path: "assetDashboard",
         element: <AssetDashboard />,
       },
@@ -28,8 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: "workorderDashboard",
-        element: <WorkOrderDashboard />
-      }
+        element: <WorkOrderDashboard />,
+      },
     ],
   },
 ]);
