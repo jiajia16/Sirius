@@ -1,4 +1,3 @@
-import { Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import {
     BarChart,
     Bar,

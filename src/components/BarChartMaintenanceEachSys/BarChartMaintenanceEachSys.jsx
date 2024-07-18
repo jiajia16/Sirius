@@ -1,8 +1,5 @@
 import * as React from 'react';
 import {
-    PieChart,
-    Pie,
-    Cell,
     BarChart,
     Bar,
     XAxis,
@@ -10,9 +7,6 @@ import {
     CartesianGrid,
     Legend,
     ResponsiveContainer,
-    LineChart,
-    Line,
-    Tooltip,
 } from "recharts";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8", "#82ca9d", "#a4de6c", "#d0d1e6", "#f4cae4"];
