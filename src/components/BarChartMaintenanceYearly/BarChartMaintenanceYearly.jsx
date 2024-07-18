@@ -1,9 +1,4 @@
 import {
-    PieChart,
-    Pie,
-    Cell,
-    BarChart,
-    Bar,
     XAxis,
     YAxis,
     CartesianGrid,
@@ -11,7 +6,6 @@ import {
     ResponsiveContainer,
     LineChart,
     Line,
-    Tooltip,
 } from "recharts";
 
 const barChartData = [
