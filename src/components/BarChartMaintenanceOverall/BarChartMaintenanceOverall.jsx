@@ -24,7 +24,7 @@ const data = [
     { name: "Jul-24", Scheduled: 2, Started: 3, Completed: 2, Closed: 0, Cancelled: 0, OverDue: 0 },
 ];
 
-export default function BarChartMaintenanceEachSys() {
+export default function BarChartMaintenanceOverall() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
