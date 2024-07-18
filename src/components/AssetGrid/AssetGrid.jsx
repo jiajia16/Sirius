@@ -131,7 +131,7 @@ export default function AssetGrid() {
         </Grid>
 
         <Grid item xs={12}>
-          <Item height="225px">
+          <Item height="320px">
             <Box component="div" className="alarm-box" sx={{ width: "100%" }}>
               <Typography component="div" className="alarm-title">
                 Alarms
