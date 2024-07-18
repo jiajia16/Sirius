@@ -23,6 +23,9 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <AssetDashboard />,
+      },
+      {
         path: "assetDashboard",
         element: <AssetDashboard />,
       },
