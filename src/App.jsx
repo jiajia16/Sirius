@@ -5,6 +5,7 @@ import LoginPage from "./pages/Login/LoginPage.jsx";
 import NotFoundPage from "./pages/Error/ErrorPage.jsx";
 import AssetDashboard from "../src/content/Asset/Dashboard/AssetDashboard.jsx";
 import MaintenanceDashboard from "../src/content/Maintenance/Dashboard/MaintenanceDashboard.jsx";
+import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDashboard.jsx"
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         path: "maintenanceDashboard",
         element: <MaintenanceDashboard />,
       },
+      {
+        path: "workorderDashboard",
+        element: <WorkOrderDashboard />
+      }
     ],
   },
 ]);
