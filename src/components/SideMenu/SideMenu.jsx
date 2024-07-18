@@ -1,6 +1,7 @@
 import "./SideMenu.css";
 import MenuButton from "./MenuButton.jsx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import {
   Home,
@@ -51,17 +52,19 @@ export default function SideMenu() {
         {screenSize && <Typography>Alarm</Typography>}
       </MenuButton>
       <MenuButton
+        component="assetDashboard"
         value={screenSize}
-        onSelect={() => handleSelect("asset")}
-        isSelected={selected === "asset"}
+        onSelect={() => handleSelect("assetDashboard")}
+        isSelected={selected === "assetDashboard"}
       >
         <BusinessCenter />
         {screenSize && <Typography>Asset</Typography>}
       </MenuButton>
       <MenuButton
+        component="maintenanceDashboard"
         value={screenSize}
-        onSelect={() => handleSelect("maintenance")}
-        isSelected={selected === "maintenance"}
+        onSelect={() => handleSelect("maintenanceDashboard")}
+        isSelected={selected === "maintenanceDashboard"}
       >
         <Handyman />
         {screenSize && <Typography>Maintenance</Typography>}
@@ -103,7 +106,7 @@ export default function SideMenu() {
         onSelect={() => handleSelect("setting")}
         isSelected={selected === "setting"}
       >
-        <Settings /> `12  `
+        <Settings />
         {screenSize && <Typography>Setting</Typography>}
       </MenuButton>
     </Box>
