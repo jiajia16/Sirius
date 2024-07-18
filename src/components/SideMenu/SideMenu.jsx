@@ -1,4 +1,6 @@
 import "./SideMenu.css";
+import MenuButton from "./MenuButton.jsx";
+import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import {
   Home,
@@ -15,61 +17,95 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function SideMenu() {
-  const matches = useMediaQuery("(min-width:1200px)");
+  const screenSize = useMediaQuery("(min-width:1200px)");
+  const [selected, setSelected] = useState();
+
+  function handleSelect(selectedButton) {
+    setSelected(selectedButton);
+  }
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-        alignItems: "flex-end",
-        backgroundColor: "#2e3e90",
-        color: "white",
-        height: "100%",
-        borderRadius: 5,
-      }}
-    >
-      <Box className="menu-item">
-        <Home className="icon" />
-        {matches && <Typography>Home</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <ManageAccounts className="icon" />
-        {matches && <Typography>Admin</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <NotificationsActive className="icon" />
-        {matches && <Typography>Alarm</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <BusinessCenter className="icon" />
-        {matches && <Typography>Asset</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Handyman className="icon" />
-        {matches && <Typography>Maintenance</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Event className="icon" />
-        {matches && <Typography>Event</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Timeline className="icon" />
-        {matches && <Typography>Trend</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Assignment className="icon" />
-        {matches && <Typography>Work Order</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Inventory className="icon" />
-        {matches && <Typography>Store</Typography>}
-      </Box>
-      <Box className="menu-item">
-        <Settings className="icon" />
-        {matches && <Typography>Setting</Typography>}
-      </Box>
+    <Box className={screenSize ? "side-menu isLarge" : "side-menu isSmall"}>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("home")}
+        isSelected={selected === "home"}
+      >
+        <Home />
+        {screenSize && <Typography>Home</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("admin")}
+        isSelected={selected === "admin"}
+      >
+        <ManageAccounts />
+        {screenSize && <Typography>Admin</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("alarm")}
+        isSelected={selected === "alarm"}
+      >
+        <NotificationsActive />
+        {screenSize && <Typography>Alarm</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("asset")}
+        isSelected={selected === "asset"}
+      >
+        <BusinessCenter />
+        {screenSize && <Typography>Asset</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("maintenance")}
+        isSelected={selected === "maintenance"}
+      >
+        <Handyman />
+        {screenSize && <Typography>Maintenance</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("event")}
+        isSelected={selected === "event"}
+      >
+        <Event />
+        {screenSize && <Typography>Event</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("trend")}
+        isSelected={selected === "trend"}
+      >
+        <Timeline />
+        {screenSize && <Typography>Trend</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("work order")}
+        isSelected={selected === "work order"}
+      >
+        <Assignment />
+        {screenSize && <Typography>Work Order</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("store")}
+        isSelected={selected === "store"}
+      >
+        <Inventory />
+        {screenSize && <Typography>Store</Typography>}
+      </MenuButton>
+      <MenuButton
+        value={screenSize}
+        onSelect={() => handleSelect("setting")}
+        isSelected={selected === "setting"}
+      >
+        <Settings /> `12  `
+        {screenSize && <Typography>Setting</Typography>}
+      </MenuButton>
     </Box>
   );
 }
