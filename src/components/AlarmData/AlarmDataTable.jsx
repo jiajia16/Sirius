@@ -49,7 +49,7 @@ const AckedBy = styled(Box)(({ theme }) => ({
 
 export default function AlarmTable() {
     return (
-        <Box sx={{ flexGrow: 1, height: '20vh', overflow: 'auto' }}>
+        <Box sx={{ flexGrow: 1, height: '30vh', overflow: 'auto' }}>
             <TableContainer component={Paper}>
                 <Table stickyHeader>
                     <TableHead>
