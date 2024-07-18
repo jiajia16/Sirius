@@ -86,6 +86,7 @@ export default function SideMenu() {
         {screenSize && <Typography>Trend</Typography>}
       </MenuButton>
       <MenuButton
+        component="workorderDashboard"
         value={screenSize}
         onSelect={() => handleSelect("work order")}
         isSelected={selected === "work order"}
