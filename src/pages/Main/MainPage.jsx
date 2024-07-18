@@ -9,28 +9,14 @@ import MaintenanceDashboard from "../../content/Maintenance/Dashboard/Maintenanc
 function Main() {
   return (
     <Box sx={{ height: "100vh", p: "0 16px 0 16px" }}>
-      <Grid
-        container
-        spacing={2}
-        sx={{ height: "100%", border: "2px red solid" }}
-      >
+      <Grid container spacing={2} sx={{ height: "100%" }}>
         {/* Top items */}
-        <Grid
-          item
-          xs={12}
-          sx={{ height: "10%", p: 0, border: "1px blue solid" }}
-        >
+        <Grid item xs={12} sx={{ height: "10%", p: 0 }}>
           <TopBar></TopBar>
         </Grid>
         {/* Bottom items */}
-        <Grid
-          container
-          item
-          xs={12}
-          spacing={2}
-          sx={{ height: "85%", border: "1px black solid" }}
-        >
-          <Grid item xs={2} sx={{ height: "100%", border: "1px red solid" }}>
+        <Grid container item xs={12} spacing={2} sx={{ height: "85%" }}>
+          <Grid item xs={2} sx={{ height: "100%" }}>
             <SideMenu></SideMenu>
           </Grid>
           <Grid item xs={10} sx={{ height: "100%", border: "1px red solid" }}>
