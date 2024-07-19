@@ -63,7 +63,7 @@ export default function LoginPage() {
             </Box>
             <Button
               variant="contained"
-              href="/Sirius/main"
+              href="#/Sirius/main"
               sx={{
                 p: 2,
                 backgroundColor: "black",
