@@ -9,7 +9,7 @@ import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDash
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    index: true,
     element: <LoginPage />,
     errorElement: <NotFoundPage />,
   },
