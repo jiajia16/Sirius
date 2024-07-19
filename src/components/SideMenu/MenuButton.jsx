@@ -26,7 +26,7 @@ export default function MenuButton({
     >
       <Button
         LinkComponent={Link}
-        to={component}
+        to={"/Sirius/main/" + component}
         // onClick={onSelect}
         onClick={() => onButtonClick(onSelect)}
         sx={{
