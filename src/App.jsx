@@ -9,16 +9,16 @@ import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDash
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Sirius/",
     element: <LoginPage />,
     errorElement: <NotFoundPage />,
   },
   {
-    path: "login",
+    path: "/Sirius/login",
     element: <LoginPage />,
   },
   {
-    path: "main",
+    path: "/Sirius/main",
     element: <MainPage />,
     children: [
       {
@@ -26,15 +26,15 @@ const router = createBrowserRouter([
         element: <AssetDashboard />,
       },
       {
-        path: "assetDashboard",
+        path: "/Sirius/main/assetDashboard",
         element: <AssetDashboard />,
       },
       {
-        path: "maintenanceDashboard",
+        path: "/Sirius/main/maintenanceDashboard",
         element: <MaintenanceDashboard />,
       },
       {
-        path: "workorderDashboard",
+        path: "/Sirius/main/workorderDashboard",
         element: <WorkOrderDashboard />,
       },
     ],
