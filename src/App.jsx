@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, createHashRouter } from "react-router-dom";
 
 import MainPage from "./pages/Main/MainPage.jsx";
 import LoginPage from "./pages/Login/LoginPage.jsx";
@@ -7,7 +7,7 @@ import AssetDashboard from "../src/content/Asset/Dashboard/AssetDashboard.jsx";
 import MaintenanceDashboard from "../src/content/Maintenance/Dashboard/MaintenanceDashboard.jsx";
 import WorkOrderDashboard from "../src/content/WorkOrder/Dashboard/WorkOrderDashboard.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/Sirius/",
     element: <LoginPage />,
