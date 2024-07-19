@@ -14,11 +14,11 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/Sirius/login",
+    path: "/Sirius/login/",
     element: <LoginPage />,
   },
   {
-    path: "/Sirius/main",
+    path: "/Sirius/main/",
     element: <MainPage />,
     children: [
       {
@@ -26,15 +26,15 @@ const router = createBrowserRouter([
         element: <AssetDashboard />,
       },
       {
-        path: "/Sirius/main/assetDashboard",
+        path: "/Sirius/main/assetDashboard/",
         element: <AssetDashboard />,
       },
       {
-        path: "/Sirius/main/maintenanceDashboard",
+        path: "/Sirius/main/maintenanceDashboard/",
         element: <MaintenanceDashboard />,
       },
       {
-        path: "/Sirius/main/workorderDashboard",
+        path: "/Sirius/main/workorderDashboard/",
         element: <WorkOrderDashboard />,
       },
     ],
