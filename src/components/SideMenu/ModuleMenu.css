@@ -1,0 +1,16 @@
+.side-menu {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  
+  .isSmall {
+    align-items: center;
+  }
+  
+  .isLarge {
+    align-items: flex-end;
+  }
+
