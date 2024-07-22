@@ -33,11 +33,11 @@ export default function MaintenanceDashboard() {
       <Grid container sx={{ flex: 1 }}>
         <Grid container item xs={12} sx={{ flex: 1 }}>
           <Grid item xs={6} sx={{ height: "93%" }}>
-            <ResponsiveContainer>
-              <Item>
-                <PieChartMaintenance />
-              </Item>
-            </ResponsiveContainer>
+
+            <Item sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <PieChartMaintenance />
+            </Item>
+
           </Grid>
 
           <Grid item xs={6} sx={{ height: "93%" }}>

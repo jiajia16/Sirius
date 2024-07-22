@@ -7,7 +7,7 @@ import {
     LineChart,
     Line,
 } from "recharts";
-
+import { Typography, Box } from "@mui/material";
 const barChartData = [
     { name: "Aug-23", Scheduled: 0, Started: 0, Completed: 0, Closed: 0, Cancelled: 0, OverDue: 0 },
     { name: "Sep-23", Scheduled: 0, Started: 0, Completed: 0, Closed: 0, Cancelled: 0, OverDue: 0 },
@@ -25,20 +25,26 @@ const barChartData = [
 
 export default function BarChartMaintenanceYearly() {
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={barChartData}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <CartesianGrid stroke="#ccc" />
-                <Legend />
-                <Line type="monotone" dataKey="Scheduled" stroke="#0088FE" />
-                <Line type="monotone" dataKey="Started" stroke="#00C49F" />
-                <Line type="monotone" dataKey="Completed" stroke="#FFBB28" />
-                <Line type="monotone" dataKey="Closed" stroke="#FF8042" />
-                <Line type="monotone" dataKey="Cancelled" stroke="#8884d8" />
-                <Line type="monotone" dataKey="OverDue" stroke="#82ca9d" />
-            </LineChart>
-        </ResponsiveContainer>
+        <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h7">Preventive Maintenance Yearly Report</Typography>
+            <Box sx={{ width: '100%', height: 'calc(100% - 22px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={barChartData}>
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <CartesianGrid stroke="#ccc" />
+                        <Legend />
+                        <Line type="monotone" dataKey="Scheduled" stroke="#0088FE" />
+                        <Line type="monotone" dataKey="Started" stroke="#00C49F" />
+                        <Line type="monotone" dataKey="Completed" stroke="#FFBB28" />
+                        <Line type="monotone" dataKey="Closed" stroke="#FF8042" />
+                        <Line type="monotone" dataKey="Cancelled" stroke="#8884d8" />
+                        <Line type="monotone" dataKey="OverDue" stroke="#82ca9d" />
+                    </LineChart>
+                </ResponsiveContainer>
+            </Box>
+        </Box>
     );
 
 }
+
