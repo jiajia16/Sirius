@@ -8,7 +8,7 @@ import {
     Legend,
     ResponsiveContainer,
 } from "recharts";
-
+import { Typography, Box } from '@mui/material';
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8", "#82ca9d", "#a4de6c", "#d0d1e6", "#f4cae4"];
 
 const barChartData = [
@@ -28,19 +28,24 @@ const barChartData = [
 
 export default function BarChartMaintenanceEachSys() {
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={barChartData}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <CartesianGrid stroke="#ccc" />
-                <Legend />
-                <Bar dataKey="Scheduled" fill="#0088FE" />
-                <Bar dataKey="Started" fill="#00C49F" />
-                <Bar dataKey="Completed" fill="#FFBB28" />
-                <Bar dataKey="Closed" fill="#FF8042" />
-                <Bar dataKey="Cancelled" fill="#8884d8" />
-                <Bar dataKey="OverDue" fill="#82ca9d" />
-            </BarChart>
-        </ResponsiveContainer>
+        <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h7">Preventive Maintenance Each System Status</Typography>
+            <Box sx={{ width: '100%', height: 'calc(100% - 28px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={barChartData}>
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <CartesianGrid stroke="#ccc" />
+                        <Legend />
+                        <Bar dataKey="Scheduled" fill="#0088FE" />
+                        <Bar dataKey="Started" fill="#00C49F" />
+                        <Bar dataKey="Completed" fill="#FFBB28" />
+                        <Bar dataKey="Closed" fill="#FF8042" />
+                        <Bar dataKey="Cancelled" fill="#8884d8" />
+                        <Bar dataKey="OverDue" fill="#82ca9d" />
+                    </BarChart>
+                </ResponsiveContainer>
+            </Box>
+        </Box>
     );
 }
