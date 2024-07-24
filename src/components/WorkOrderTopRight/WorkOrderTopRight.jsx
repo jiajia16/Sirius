@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Box,
     Typography,
-    Grid,
 } from '@mui/material';
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -20,10 +19,8 @@ const WorkOrderTopRight = () => {
         { day: 'Thursday', closed: 1, inProgress: 5, open: 0 },
     ];
 
-    const maxValue = Math.max(...data.flatMap((item) => [item.closed, item.inProgress, item.open]));
-
     return (
-        <Box sx={{ width: '100%', height: '100%' }}>
+        <Box sx={{ width: '100%', height: '100%', padding: 2 }}>
             <Typography variant="h6" gutterBottom>
                 Preventive Maintenance Each System Status
             </Typography>
