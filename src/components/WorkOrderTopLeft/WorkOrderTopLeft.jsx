@@ -4,8 +4,6 @@ import {
     Typography,
     Grid,
     Paper,
-    CircularProgress,
-    Tooltip,
 } from '@mui/material';
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip as RechartsTooltip } from 'recharts';
 
@@ -26,10 +24,10 @@ const data2 = [
 
 const CustomPieChart = ({ data, title, subtitle }) => {
     return (
-        <Paper elevation={10} sx={{ height: '100%', boxSizing: 'border-box' }}>
+        <Paper elevation={10} sx={{ height: '100%', boxSizing: 'border-box', padding: 2 }}>
             <Typography variant="h6">{title}</Typography>
             <Typography variant="body2">{subtitle}</Typography>
-            <Box sx={{ width: '100%', height: 'calc(100% - 88px)', position: 'relative' }}>
+            <Box sx={{ width: '100%', height: 'calc(100% - 48px)' }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie
@@ -54,29 +52,26 @@ const CustomPieChart = ({ data, title, subtitle }) => {
     );
 };
 
-
 export default function WorkOrderTopLeft() {
     return (
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant="h7">Preventive Maintenance Each System Status</Typography>
-            <Box sx={{ width: '100%', height: 'calc(100% - 158px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <Grid container spacing={2} sx={{ width: '100%', height: '100%' }}>
-                    <Grid item xs={12} sm={6} sx={{ height: '100%' }}>
-                        <CustomPieChart
-                            data={data1}
-                            title="Total number of work orders and"
-                            subtitle="status (86)"
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} sx={{ height: '100%' }}>
-                        <CustomPieChart
-                            data={data2}
-                            title="Total number of work orders assign"
-                            subtitle="status (0)"
-                        />
-                    </Grid>
+        <Box sx={{ width: '100%', height: '100%', padding: 2 }}>
+            <Typography variant="h6">Preventive Maintenance Each System Status</Typography>
+            <Grid container spacing={2} sx={{ width: '100%', height: 'calc(90% - 90px)' }}>
+                <Grid item xs={12} sm={6} sx={{ height: '100%' }}>
+                    <CustomPieChart
+                        data={data1}
+                        title="Total number of work orders and"
+                        subtitle="status (86)"
+                    />
                 </Grid>
-            </Box>
+                <Grid item xs={12} sm={6} sx={{ height: '100%' }}>
+                    <CustomPieChart
+                        data={data2}
+                        title="Total number of work orders assign"
+                        subtitle="status (0)"
+                    />
+                </Grid>
+            </Grid>
         </Box>
     );
 }
