@@ -30,8 +30,8 @@ export default function MaintenanceDashboard() {
         flexDirection: "column",
       }}
     >
-      <Grid container sx={{ flex: 1 }}>
-        <Grid container item xs={12} sx={{ flex: 1 }}>
+      <Grid container sx={{ flex: 1, height: "100%" }} spacing={2}>
+        <Grid container item xs={12} sx={{ flex: 1 }} spacing={2}>
           <Grid item xs={6} sx={{ height: "93%" }}>
 
             <Item sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -47,7 +47,7 @@ export default function MaintenanceDashboard() {
           </Grid>
         </Grid>
 
-        <Grid container item xs={12} sx={{ flex: 1 }}>
+        <Grid container item xs={12} sx={{ flex: 1 }} spacing={2}>
           <Grid item xs={6} sx={{ height: "93%" }}>
             <Item>
               <BarChartMaintenanceYearly />
