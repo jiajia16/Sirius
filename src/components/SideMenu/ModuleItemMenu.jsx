@@ -9,8 +9,9 @@ import {
   IconButton,
 } from "@mui/material";
 import { KeyboardArrowLeft } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
-export default function ModuleItemMenu({ onButtonClick }) {
+export default function ModuleItemMenu({ onButtonClick, topic }) {
   return (
     <Box
       sx={{ height: "100%", display: "flex", border: "1px red solid", pt: 1 }}
@@ -19,19 +20,26 @@ export default function ModuleItemMenu({ onButtonClick }) {
         <KeyboardArrowLeft />
       </IconButton>
       <Box sx={{ p: 1, color: "white" }}>
-        {Object.keys(LIST_OF_ITEMS.asset).map((key) => (
+        {Object.keys(LIST_OF_ITEMS[topic]).map((key) => (
           <Box key={key}>
             <Typography variant="h6">
               {key.charAt(0).toUpperCase() + key.slice(1)}
             </Typography>
             <List>
-              {LIST_OF_ITEMS.asset[key].map((item, index) => (
-                <ListItemButton key={index}>
-                  <ListItemText primary={item} />
-                </ListItemButton>
-              ))}
+              {LIST_OF_ITEMS[topic][key].map((item, index) => {
+                const itemWithoutSpaces = item.replace(/\s+/g, "");
+                return (
+                  <ListItemButton
+                    LinkComponent={Link}
+                    to={"/Sirius/main/" + topic + "/" + itemWithoutSpaces}
+                    key={index}
+                    sx={{ p: "0px 0px 0px 20px", m: 0 }}
+                  >
+                    <ListItemText primary={item} sx={{ p: 0, m: 0 }} />
+                  </ListItemButton>
+                );
+              })}
             </List>
-            <Divider sx={{ backgroundColor: "white", mb: 1 }} />
           </Box>
         ))}
       </Box>

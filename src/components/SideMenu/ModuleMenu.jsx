@@ -27,25 +27,29 @@ export default function ModuleMenu({ onButtonClick }) {
 
   return (
     <Box className={screenSize ? "side-menu isLarge" : "side-menu isSmall"}>
-      <MenuButton
+      {/* <MenuButton
         screenSize={screenSize}
         onSelect={() => handleSelect("home")}
         isSelected={selected === "home"}
       >
         <Home />
         {screenSize && <Typography>Home</Typography>}
-      </MenuButton>
+      </MenuButton> */}
       <MenuButton
+        component="AdminDashboard"
+        onSelect="admin"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("admin")}
         isSelected={selected === "admin"}
       >
         <ManageAccounts />
         {screenSize && <Typography>Admin</Typography>}
       </MenuButton>
       <MenuButton
+        component="alarmMain"
+        onSelect="alarm"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("alarm")}
         isSelected={selected === "alarm"}
       >
         <NotificationsActive />
@@ -53,34 +57,39 @@ export default function ModuleMenu({ onButtonClick }) {
       </MenuButton>
       <MenuButton
         component="assetDashboard"
-        screenSize={screenSize}
-        onSelect='asset'
-        isSelected={selected === "assetDashboard"}
+        onSelect="asset"
         onButtonClick={onButtonClick}
+        screenSize={screenSize}
+        isSelected={selected === "assetDashboard"}
       >
         <BusinessCenter />
         {screenSize && <Typography>Asset</Typography>}
       </MenuButton>
       <MenuButton
         component="maintenanceDashboard"
+        onSelect="maintenance"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("maintenanceDashboard")}
         isSelected={selected === "maintenanceDashboard"}
       >
         <Handyman />
         {screenSize && <Typography>Maintenance</Typography>}
       </MenuButton>
       <MenuButton
+        component="eventDashboard"
+        onSelect="event"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("event")}
         isSelected={selected === "event"}
       >
         <Event />
         {screenSize && <Typography>Event</Typography>}
       </MenuButton>
       <MenuButton
+        component="trendMain"
+        onSelect="trend"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("trend")}
         isSelected={selected === "trend"}
       >
         <Timeline />
@@ -88,16 +97,19 @@ export default function ModuleMenu({ onButtonClick }) {
       </MenuButton>
       <MenuButton
         component="workorderDashboard"
+        onSelect="workorder"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("work order")}
         isSelected={selected === "work order"}
       >
         <Assignment />
         {screenSize && <Typography>Work Order</Typography>}
       </MenuButton>
       <MenuButton
+        component="storeDashboard"
+        onSelect="store"
+        onButtonClick={onButtonClick}
         screenSize={screenSize}
-        onSelect={() => handleSelect("store")}
         isSelected={selected === "store"}
       >
         <Inventory />
