@@ -1,54 +1,48 @@
 import * as React from "react";
 import { useState } from "react";
-import "../../content/Asset/Dashboard/AssetDashboard.css";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import CircularProgress from "../CircularProgress/CircularProgress";
 import AlarmCountBarTrend from "../AlarmCountBar/AlarmCountBarTrend";
-import AlarmSystemTrend from "../AlarmCountSystem/AlarmSystemCount";
+import { CircularProgress } from "@mui/material";
 import AlarmsCount from "../AlarmsCountContainer/AlarmsCountContainer";
+import AlarmSystemTrend from "../AlarmCountSystem/AlarmSystemCount";
 import AlarmTable from "../AlarmData/AlarmDataTable";
 
-const Item = styled(Paper)(({ theme, height }) => ({
+const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
-  height: height,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  overflow: "hidden",
-}));
-
-const Item1 = styled(Paper)(({ theme, height }) => ({
-  backgroundColor: "rgba(135, 206, 235, 0.5)",
-  padding: theme.spacing(2),
-  borderRadius: theme.spacing(1),
-  height: height,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
+  height: "100%", // Ensure each item takes the full height of its container
   overflow: "hidden",
 }));
 
 export default function AssetGrid() {
+
   const percent = 50;
   const totalAlarm = 118;
   const totalAlarmOnline = 108;
   const [percentage, setPercentage] = useState(88);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <Item height="180px">
+    <Box
+      sx={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        padding: 2,
+      }}
+    >
+      <Grid container spacing={2} sx={{ height: "40%" }}>
+        <Grid item xs={4} sx={{ height: "90%" }}>
+          <Item>
+
             <Box
               component="div"
               className="alarm-box"
@@ -80,66 +74,38 @@ export default function AssetGrid() {
                 </Typography>
               </Box>
             </Box>
+
           </Item>
         </Grid>
 
-        <Grid item xs={12} md={8}>
-          <Item height="180px">
-            <Box
-              component="div"
-              className="alarm-box"
-              sx={{ width: "100%", ml: 3 }}
-            >
-              <Typography component="div" className="alarm-title">
-                Alarm Count
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <AlarmCountBarTrend />
-            </Box>
+        <Grid item xs={8} sx={{ height: "90%" }}>
+          <Item>
+            <AlarmCountBarTrend />
+          </Item>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} sx={{ height: "40%" }}>
+        <Grid item xs={8} sx={{ height: "90%" }}>
+          <Item>
+            <AlarmSystemTrend />
           </Item>
         </Grid>
 
-        <Grid item xs={12} md={8}>
-          <Item1 height="180px">
-            <Box component="div" className="alarm-box" sx={{ width: "100%" }}>
-              <Typography component="div" className="alarm-title">
-                Active Alarms by System
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <AlarmSystemTrend />
-            </Box>
-          </Item1>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <Item height="196px">
-            <Box
-              component="div"
-              className="alarm-box"
-              sx={{ width: "100%", ml: 3 }}
-            >
-              <Typography component="div" className="alarm-title">
-                Active Alarms by Priority
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "column", mt: 2 }}>
-              <AlarmsCount />
-            </Box>
+        <Grid item xs={4} sx={{ height: "90%" }}>
+          <Item>
+            <Typography component="div" className="alarm-title" padding={2}>
+              Active Alarms by Priority
+            </Typography>
+            <AlarmsCount />
           </Item>
         </Grid>
+      </Grid>
 
-        <Grid item xs={12}>
-          <Item height="200px">
-            <Box component="div" className="alarm-box" sx={{ width: "100%" }}>
-              <Typography component="div" className="alarm-title">
-                Alarms
-              </Typography>
-            </Box>
-            <Box sx={{ width: "100%", height: "100%" }}>
-              <AlarmTable />
-            </Box>
+      <Grid container spacing={2} sx={{ height: "30%" }}>
+        <Grid item xs={12} sx={{ height: "90%" }}>
+          <Item>
+            <AlarmTable />
           </Item>
         </Grid>
       </Grid>
