@@ -8,9 +8,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Pie } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
-import { ResponsiveContainer } from "recharts";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-Chart.register(ArcElement, Tooltip, Legend);
+Chart.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -49,7 +49,7 @@ const pieData2 = {
     ],
     datasets: [
         {
-            data: [31, 31, 10, 8, 0, 33, 33],
+            data: [31, 31, 10, 8, 33, 33],
             backgroundColor: [
                 "#ff6347",
                 "#ff4500",
@@ -91,6 +91,15 @@ const options = {
                 },
             },
         },
+        datalabels: {
+            color: 'white',
+            formatter: (value, context) => {
+                return value;
+            },
+            font: {
+                weight: 'bold',
+            },
+        },
     },
     maintainAspectRatio: false,
 };
@@ -105,9 +114,33 @@ export default function WorkOrderDashboard() {
                 flexDirection: "column",
             }}
         >
-            <Typography variant="h7" align="center" sx={{ mb: 2 }}>
-                Total Work Orders Status And Assign Status Count
-            </Typography>
+            <Box
+                sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    mb: 2,
+                }}
+            >
+                <Typography variant="h7" sx={{ fontWeight: "bold" }}>
+                    Total Work Orders Status And Assign Status Count
+                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1, ml: "auto" }}>
+                    <FormControlLabel
+                        control={<Checkbox defaultChecked sx={{ transform: 'scale(0.75)' }} />}
+                        label={<Typography variant="body2">Weekly</Typography>}
+                        sx={{ mr: 0.5 }} // Adjust margin-right as needed
+                    />
+                    <FormControlLabel
+                        control={<Checkbox sx={{ transform: 'scale(0.75)' }} />}
+                        label={<Typography variant="body2">Monthly</Typography>}
+                        sx={{ mr: 0.5 }} // Adjust margin-right as needed
+                    />
+                </Box>
+            </Box>
+
+
             <Box
                 sx={{
                     width: "100%",
@@ -118,13 +151,6 @@ export default function WorkOrderDashboard() {
                     alignItems: "center",
                 }}
             >
-                <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
-                    <FormControlLabel
-                        control={<Checkbox defaultChecked />}
-                        label="Weekly"
-                    />
-                    <FormControlLabel control={<Checkbox />} label="Monthly" />
-                </Box>
                 <Grid container spacing={2} sx={{ flex: 1, height: "100%" }}>
                     <Grid item xs={6} sx={{ height: "100%", height: "calc(100% - 20px)" }}>
                         <Item>

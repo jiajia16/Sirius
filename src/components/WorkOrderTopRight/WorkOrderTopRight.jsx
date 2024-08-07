@@ -10,7 +10,6 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { Box, Typography } from "@mui/material";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(
   CategoryScale,
@@ -18,8 +17,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend,
-  ChartDataLabels // Register the datalabels plugin
+  Legend
 );
 
 const options = {
@@ -29,15 +27,23 @@ const options = {
     legend: {
       position: "bottom",
     },
-    datalabels: {
-      color: "white",
-      anchor: "end",
-      align: "top",
-      font: {
-        weight: "bold",
-        size: 10, // Reduce font size
+    tooltip: {
+      enabled: true, // Enable tooltips
+      callbacks: {
+        label: function (context) {
+          let label = context.dataset.label || '';
+          if (label) {
+            label += ': ';
+          }
+          if (context.parsed.y !== null) {
+            label += context.parsed.y;
+          }
+          return label;
+        },
       },
-      formatter: (value) => value,
+    },
+    datalabels: {
+      display: false, // Disable data labels
     },
   },
   scales: {
@@ -131,7 +137,7 @@ export default function WorkOrderTopLeft() {
           marginBottom: 2,
         }}
       >
-        <Typography variant="subtitle1" sx={{ fontSize: "0.75rem" }}>
+        <Typography variant="h7" sx={{ fontWeight: "bold" }}>
           Total Work Orders status count
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
