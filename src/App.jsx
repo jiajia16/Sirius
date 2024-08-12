@@ -101,6 +101,7 @@ import TrendELEC from "../src/content/Trend/TrendELEC/TrendELEC.jsx";
 import TrendFCU from "../src/content/Trend/TrendFCU/TrendFCU.jsx";
 import TrendMV from "../src/content/Trend/TrendMV/TrendMV.jsx";
 import TrendSensor from "../src/content/Trend/TrendSensor/TrendSensor.jsx";
+import TrendCharts from "../src/content/Trend/TrendCharts/TrendCharts.jsx";
 
 import SettingMain from "../src/content/Setting/SettingMain.jsx";
 import SystemDataTrades from "../src/content/WorkOrder/SystemDataTrades/SystemDataTrades.jsx";
@@ -321,6 +322,10 @@ const router = createHashRouter([
         path: "/Sirius/main/trend/Sensor/",
         element: <TrendSensor />,
       },
+      {
+        path: "/Sirius/main/trend/TrendCharts/:id",
+        element: <TrendCharts />,
+      },
       // Work Order Routes ---------------------------------
       {
         path: "/Sirius/main/workorder/workorderDashboard/",
@@ -443,6 +448,7 @@ const router = createHashRouter([
         path: "/Sirius/main/store/ReceivedPartsReport/",
         element: <ReceivedPartsReport />,
       },
+
     ],
   },
 ]);
