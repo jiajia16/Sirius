@@ -1,0 +1,107 @@
+[
+    {
+        "asset": "AHU-04-1",
+        "description": "L2 Cultural Gallery",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L4"
+    },
+    {
+        "asset": "AHU-06-1",
+        "description": "L6 Recital Room",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L6"
+    },
+    {
+        "asset": "AHU-08-1",
+        "description": "L7 & 8 Pre-Function MPH-Front",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L8"
+    },
+    {
+        "asset": "AHU-08-2",
+        "description": "L9 Pre-Function Auditorium",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L8"
+    },
+    {
+        "asset": "AHU-08-3",
+        "description": "L9 Auditorium",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L8"
+    },
+    {
+        "asset": "AHU-08-4",
+        "description": "L7 & 8 Pre-Function MPH Back",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L8"
+    },
+    {
+        "asset": "AHU-08-5",
+        "description": "L7 Multi-Purpose Hall",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L8"
+    },
+    {
+        "asset": "AHU-11-1",
+        "description": "L9 Auditorium Backstage",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L11"
+    },
+    {
+        "asset": "AHU-11-2",
+        "description": "L9 Auditorium Stage",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "L11"
+    },
+    {
+        "asset": "AHU-LR-1",
+        "description": "L10 Foyer, Rehearsal, Corridor",
+        "assetGroup": "AHU",
+        "assetCategory": "CAV",
+        "location": "LR"
+    },
+    {
+        "asset": "FCU-6-3",
+        "description": "Recital Storage",
+        "assetGroup": "FCU",
+        "assetCategory": "CHW",
+        "location": "L6"
+    },
+    {
+        "asset": "FCU-6-4",
+        "description": "Changing Room 1",
+        "assetGroup": "FCU",
+        "assetCategory": "CHW",
+        "location": "L6"
+    },
+    {
+        "asset": "FCU-6-5",
+        "description": "Changing Room 2",
+        "assetGroup": "FCU",
+        "assetCategory": "CHW",
+        "location": "L6"
+    },
+    {
+        "asset": "IAQ_SENSOR_1547",
+        "description": "IAQ SENSOR 1547",
+        "assetGroup": "SENSOR",
+        "assetCategory": "IAQ SENSOR",
+        "location": "SCCC"
+    },
+    {
+        "asset": "IOT-S500M-L10",
+        "description": "IOT-S500M-L10",
+        "assetGroup": "SENSOR",
+        "assetCategory": "IOT SENSOR",
+        "location": "L4"
+    }
+]

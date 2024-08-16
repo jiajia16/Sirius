@@ -1,4 +1,3 @@
-// src/content/Asset/AssetDetails/AssetDetails.jsx
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Typography, Checkbox, FormControlLabel, Button, TextField, FormGroup, Divider } from '@mui/material';
@@ -8,6 +7,9 @@ import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -19,7 +21,6 @@ const Item = styled(Paper)(({ theme }) => ({
     overflow: "auto",
     boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
 }));
-
 
 const BoldTypography = styled(Typography)(({ theme }) => ({
     fontWeight: 'bold',
@@ -37,26 +38,27 @@ const AssetDetails = () => {
     };
 
 
-    // Example data for the trend graph
     const trendData = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
         datasets: [
             {
                 label: xTag || 'X Tag',
                 data: [30, 40, 28, 46, 35], // Dummy data
-                borderColor: 'rgba(75,192,192,1)',
-                backgroundColor: 'rgba(75,192,192,0.2)',
+                borderColor: 'rgba(204, 204, 0, 1)', // Dark yellow
+                backgroundColor: 'rgba(204, 204, 0, 0.2)', // Light yellow
                 fill: false,
             },
             {
                 label: yTag || 'Y Tag',
                 data: [25, 42, 35, 40, 38], // Dummy data
-                borderColor: 'rgba(153,102,255,1)',
-                backgroundColor: 'rgba(153,102,255,0.2)',
+                borderColor: 'rgba(0, 0, 139, 1)', // Dark blue
+                backgroundColor: 'rgba(0, 0, 139, 0.2)', // Light dark blue
                 fill: false,
             }
         ],
     };
+
+
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -70,14 +72,14 @@ const AssetDetails = () => {
             gap: 2,
             padding: 2,
         }}>
-            <Grid container spacing={2} sx={{ height: "98%" }}>
+            <Grid container spacing={2} sx={{ height: "100%" }}>
                 {/* Left Column */}
-                <Grid item xs={4} sx={{ height: "104%" }}>
-                    <Grid container spacing={3} direction="column" sx={{ height: "109%" }}>
+                <Grid item xs={4} sx={{ height: "100%", display: 'flex', flexDirection: 'column' }}>
+                    <Grid container spacing={3} direction="column" sx={{ flexGrow: 1 }}>
                         {/* Top Grid Item in Left Column */}
-                        <Grid item xs={2}>
+                        <Grid item xs>
                             <Item>
-                                <BoldTypography variant="h6">Selected Trend Group Header</BoldTypography>
+                                <BoldTypography variant="h6">Select Trend Group Header</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
                                 <FormGroup>
                                     <FormControlLabel
@@ -117,34 +119,92 @@ const AssetDetails = () => {
                             </Item>
                         </Grid>
 
-
                         {/* Bottom Grid Item in Left Column */}
-                        <Grid item xs={3.5} >
+                        <Grid item xs>
                             <Item>
-                                <BoldTypography variant="h6">Selected Additional Tags</BoldTypography>
+                                <BoldTypography variant="h6">Select Additional Tags</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
-                                {/* Add content for the additional grid item here */}
-                                <Typography variant="body1">This is where additional information can be displayed.</Typography>
+
+                                {/* Box containing the search bar and space for search results */}
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, padding: 1, border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#f9f9f9', minHeight: '150px' }}>
+                                    <TextField
+                                        variant="outlined"
+                                        placeholder="Search for tags"
+                                        fullWidth
+                                        sx={{
+                                            backgroundColor: 'white',
+                                            borderRadius: '20px',
+                                            '& .MuiOutlinedInput-root': {
+                                                borderRadius: '20px',
+                                                '& fieldset': {
+                                                    borderColor: '#ccc',
+                                                },
+                                            },
+                                            '& .MuiInputBase-input': {
+                                                padding: '8px 12px',
+                                            },
+                                        }}
+                                    />
+                                    {/* Space below for search results */}
+                                    <Box sx={{ flexGrow: 1, mt: 1 }}>
+                                        {/* Search results will be displayed here */}
+                                    </Box>
+                                </Box>
                             </Item>
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs>
                             <Item>
                                 <BoldTypography variant="h6">Select Date Time</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
-                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
 
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DatePicker
+                                        sx={{
+                                            transform: 'scale(0.7)', // Adjust the scale factor as needed
+                                            transformOrigin: 'center', // Keeps it centered
+                                        }}
+                                    />
+                                </LocalizationProvider>
+                                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, flexWrap: 'wrap' }}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '1px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                        30 mins
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                        1 hour
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                        2 hours
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                        3 hours
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                        6 hours
+                                    </Button>
                                 </Box>
-                                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                                    <Button variant="contained">30 mins</Button>
-                                    <Button variant="contained">1 hour</Button>
-                                    <Button variant="contained">2 hours</Button>
-                                    <Button variant="contained">3 hours</Button>
-                                    <Button variant="contained">6 hours</Button>
-                                </Box>
-                                <Box>
-                                    <Button variant="contained" sx={{ flexGrow: 1, ml: 1 }}>Enter</Button>
-                                    <Button variant="contained" sx={{ flexGrow: 1, ml: 1 }}>Export</Button>
+
+                                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 1 }}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
+                                        Enter
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
+                                        Export
+                                    </Button>
                                 </Box>
                             </Item>
                         </Grid>
@@ -152,7 +212,7 @@ const AssetDetails = () => {
                 </Grid>
 
                 {/* Right Column */}
-                <Grid item xs={8} sx={{ height: "101%" }}>
+                <Grid item xs={8} sx={{ height: "100%" }}>
                     <Item>
                         <Box sx={{ width: "100%", height: "calc(100% - 90px)" }}>
                             <BoldTypography variant="h6">Location of Asset</BoldTypography>
@@ -162,7 +222,7 @@ const AssetDetails = () => {
                     </Item>
                 </Grid>
             </Grid>
-        </Box >
+        </Box>
     );
 };
 
