@@ -74,11 +74,11 @@ const AssetDetails = () => {
         }}>
             <Grid container spacing={2} sx={{ height: "100%" }}>
                 {/* Left Column */}
-                <Grid item xs={4} sx={{ height: "100%", display: 'flex', flexDirection: 'column' }}>
-                    <Grid container spacing={3} direction="column" sx={{ flexGrow: 1 }}>
+                <Grid item xs={4} spacing={3} sx={{ height: "100%", display: 'flex', flexDirection: 'column' }}>
+                    <Grid container direction="column" spacing={4} sx={{ height: '100%' }}>
                         {/* Top Grid Item in Left Column */}
-                        <Grid item xs>
-                            <Item>
+                        <Grid item sx={{ height: '33%', minHeight: '100px' }}>
+                            <Item >
                                 <BoldTypography variant="h6">Select Trend Group Header</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
                                 <FormGroup>
@@ -119,14 +119,12 @@ const AssetDetails = () => {
                             </Item>
                         </Grid>
 
-                        {/* Bottom Grid Item in Left Column */}
-                        <Grid item xs>
-                            <Item>
+                        {/* Middle Grid Item in Left Column */}
+                        <Grid item sx={{ height: '30%', minHeight: '100px' }}>
+                            <Item >
                                 <BoldTypography variant="h6">Select Additional Tags</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
-
-                                {/* Box containing the search bar and space for search results */}
-                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, padding: 1, border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#f9f9f9', minHeight: '150px' }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, padding: 1, border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#f9f9f9', flexGrow: 1 }}>
                                     <TextField
                                         variant="outlined"
                                         placeholder="Search for tags"
@@ -145,7 +143,6 @@ const AssetDetails = () => {
                                             },
                                         }}
                                     />
-                                    {/* Space below for search results */}
                                     <Box sx={{ flexGrow: 1, mt: 1 }}>
                                         {/* Search results will be displayed here */}
                                     </Box>
@@ -153,62 +150,49 @@ const AssetDetails = () => {
                             </Item>
                         </Grid>
 
-                        <Grid item xs>
-                            <Item>
+                        {/* Bottom Grid Item in Left Column */}
+                        <Grid item sx={{ height: '37%', minHeight: '100px' }}>
+                            <Item >
                                 <BoldTypography variant="h6">Select Date Time</BoldTypography>
                                 <Divider sx={{ my: 1 }} />
-
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <DatePicker
                                         sx={{
-                                            transform: 'scale(0.7)', // Adjust the scale factor as needed
-                                            transformOrigin: 'center', // Keeps it centered
+                                            transform: 'scale(0.7)',
+                                            transformOrigin: 'center',
                                         }}
                                     />
                                 </LocalizationProvider>
                                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, flexWrap: 'wrap' }}>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '1px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '1px 7px', minWidth: '50px', textTransform: 'none' }}>
                                         30 mins
                                     </Button>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
                                         1 hour
                                     </Button>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
                                         2 hours
                                     </Button>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
                                         3 hours
                                     </Button>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: '#673AB7', color: 'white', borderRadius: '4px', padding: '4px 7px', minWidth: '50px', textTransform: 'none' }}>
                                         6 hours
                                     </Button>
                                 </Box>
-
                                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 1 }}>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
                                         Enter
                                     </Button>
-                                    <Button
-                                        variant="contained"
-                                        sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
+                                    <Button variant="contained" sx={{ backgroundColor: 'grey', color: 'white', borderRadius: '4px', padding: '4px 12px', minWidth: '50px', textTransform: 'none' }}>
                                         Export
                                     </Button>
                                 </Box>
                             </Item>
                         </Grid>
                     </Grid>
+
+
                 </Grid>
 
                 {/* Right Column */}

@@ -6,10 +6,10 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import AlarmCountBarTrend from "../AlarmCountBar/AlarmCountBarTrend";
-import { CircularProgress } from "@mui/material";
 import AlarmsCount from "../AlarmsCountContainer/AlarmsCountContainer";
 import AlarmSystemTrend from "../AlarmCountSystem/AlarmSystemCount";
 import AlarmTable from "../AlarmData/AlarmDataTable";
+import CircularProgress from "../CircularProgress/CircularProgress";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
