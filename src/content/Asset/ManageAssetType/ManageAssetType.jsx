@@ -1,9 +1,10 @@
 import { Typography } from "@mui/material";
+import CrmContent from "../../../components/CrmContent/CrmTable";
 
 export default function ManageAssetType() {
   return (
     <div>
-      <Typography>Manage Asset Type Content</Typography>
+      <CrmContent title='Manage Asset Type'></CrmContent>
     </div>
   );
 }
