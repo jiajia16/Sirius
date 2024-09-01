@@ -28,13 +28,20 @@ const options = {
     legend: {
       position: 'bottom',
     },
-    title: {
+    datalabels: {
+      display: false,
+    },
+    labels: {
+      usePointStyle: true,  // Use the point style instead of the rectangle
+      pointStyle: 'circle',  // Change the legend marker to a circle
+    },
+    /*title: {
       display: true,
       text: 'Total number of Preventive Maintenance and Status',
       font: {
         size: 15,
       },
-    },
+    }, */
   },
   scales: {
     y: {

@@ -10,6 +10,7 @@ import AlarmsCount from "../AlarmsCountContainer/AlarmsCountContainer";
 import AlarmSystemTrend from "../AlarmCountSystem/AlarmSystemCount";
 import AlarmTable from "../AlarmData/AlarmDataTable";
 import CircularProgress from "../CircularProgress/CircularProgress";
+import AssetsFirstBox from "../AssetsFirstBox/AssetsFirstBox";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -42,39 +43,7 @@ export default function AssetGrid() {
       <Grid container spacing={2} sx={{ height: "40%" }}>
         <Grid item xs={4} sx={{ height: "90%" }}>
           <Item>
-
-            <Box
-              component="div"
-              className="alarm-box"
-              sx={{ width: "100%", ml: 3 }}
-            >
-              <Typography component="div" className="alarm-title">
-                Assets
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "100%",
-                height: "80%",
-              }}
-            >
-              <CircularProgress percentage={percentage} />
-              <Box sx={{ display: "flex", flexDirection: "column", ml: 6 }}>
-                <Typography variant="h6">Total</Typography>
-                <Typography variant="h5">{totalAlarm}</Typography>
-                <Typography variant="h6" className="online">
-                  Online
-                </Typography>
-                <Typography variant="h5" className="online">
-                  {totalAlarmOnline}
-                </Typography>
-              </Box>
-            </Box>
-
+            <AssetsFirstBox />
           </Item>
         </Grid>
 
@@ -94,9 +63,6 @@ export default function AssetGrid() {
 
         <Grid item xs={4} sx={{ height: "90%" }}>
           <Item>
-            <Typography component="div" className="alarm-title" padding={2}>
-              Active Alarms by Priority
-            </Typography>
             <AlarmsCount />
           </Item>
         </Grid>

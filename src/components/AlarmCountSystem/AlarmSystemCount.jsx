@@ -28,13 +28,16 @@ const options = {
     legend: {
       position: 'bottom',
     },
-    title: {
+    datalabels: {
+      display: false,
+    },
+    /*title: {
       display: true,
       text: 'Total number of Preventive Maintenance and Status',
       font: {
         size: 15,
       },
-    },
+    }, */
   },
   scales: {
     y: {
@@ -58,8 +61,8 @@ const data = {
       data: [0, 187, 65],
       backgroundColor: (context) => {
         const gradient = context.chart.ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, '#FFD700');
-        gradient.addColorStop(1, '#FFA500');
+        gradient.addColorStop(0, '#FF5733');  // Bright orange-red
+        gradient.addColorStop(1, '#9013FE');  // Bright yellow
         return gradient;
       },
       stack: 'Stack 0',
@@ -69,13 +72,14 @@ const data = {
       data: [252, 0, 0],
       backgroundColor: (context) => {
         const gradient = context.chart.ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, '#C6D0E1');
-        gradient.addColorStop(1, '#92A2B6');
+        gradient.addColorStop(0, '#9013FE');  // Bright green
+        gradient.addColorStop(1, '#33FFF7');  // Bright cyan
         return gradient;
       },
       stack: 'Stack 0',
     },
   ],
+
 };
 
 export default function AlarmSystemTrend() {
