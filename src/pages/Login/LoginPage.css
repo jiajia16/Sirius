@@ -1,0 +1,28 @@
+.grid-box {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.login-textfield {
+  border-radius: 15px;
+  background-color: #e6e6e6;
+}
+
+.login-textfield .MuiOutlinedInput-notchedOutline {
+  border: 0;
+}
+
+.login-textfield
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-radius: 15px;
+}
